@@ -1,17 +1,17 @@
 %-----------------Channel DC gain Parameters------------------------------%
-global h;                           % Chieu cao den LED [m]
+global h;                           % Height to LED [m]
 h = 3;
 
-global irr_max;                     % Goc roi lon nhat cua den LED (goc nua cong suat) [rad]
+global irr_max;                     % The maximum of irr angle LED  [rad]
 irr_max = 58*pi/180;
 
-global in_max;                      % Goc FOV cua PD [rad]
+global in_max;                      % Angle FOV of PD [rad]
 in_max = 45*pi/180;
 
 global K;                           % PD numbers []
 K = 17;
 
-global R;                           % Ban kinh cua PD-array [m]
+global R;                           % Radius of PD-array [m]
 R = 0.05;
 
 global A;                           % Detector physical of a PD [m2]
@@ -23,39 +23,39 @@ Ts = 1;
 global Gs;                          % optical concentrator gain []
 Gs = 1;
 
-global m;                           % he so Lembertain []
+global m;                           % Lembertain []
 m = - log10(2)/log10(cos(irr_max));
 
-global Pt;                          % cong suat phat cua den Led [W]
+global Pt;                          % Power of Led [W]
 Pt = 0.02;
 
-global H;                           % he so trong ham truyen H0
+global H;                           % Transfer function H0
 H = (m+1)*A*Ts*Gs/(2*pi);
 
-global d_max;                       % K/c lon nhat tu rb den tam den LED
+global d_max;                       % Maximum distance form RB to LED
 d_max = h*tan(irr_max);
 
 %-----------------Noise Parameters----------------------------------------%
 
-global q;                           % hang so Culong (C)
+global q;                           % Culong constant(C)
 q = 1.60217657e-19;
 
 global l;                           % detector responsivity [A/W]
 l = 0.54;
 
-global B;                           % Bandwidth = datarate trong truong hop dieu che OOK [B/s]
+global B;                           % Bandwidth with OOK [B/s]
 B = 100e6;
 
-global Ibg;                         % dong dien background [A]
+global Ibg;                         % [A]
 Ibg = 5100e-6;
 
 global I2;                          % noise bandwidth factor [constant]
 I2 = 0.562;
 
-global Kb;                           % hang so Boltzmann
+global Kb;                           % Boltzmann constant
 Kb = 1.3806488e-23;
 
-global Tk;                          % nhiet do tuyet doi [K]
+global Tk;                          % Kelvin[K]
 Tk = 300;
 
 global n;                           % fix capacitance [F/m2]
@@ -64,7 +64,7 @@ n = 1.12e-6;                        %112e-12/1e-4
 global F;                           % FET channel noise factor [constant]
 F = 1.5;
 
-global I3;                          % he so
+global I3;                          %
 I3 = 0.0868;
 
 global Gm;                          % FET transconductance [S]

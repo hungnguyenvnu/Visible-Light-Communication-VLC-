@@ -1,20 +1,22 @@
-function [ Dd, irr_angle,X,Y ] = computeIrradianceAngle( d,PD_angle )
-% Ham tra ve ket qua bao gom khoang cach tu LED den PD thu i va goc roi den
-% PD thu i va vi tri cua PD thu i
+function [ Dd, irr_angle, X, Y ] = computeIrradianceAngle( d, PD_angle )
+% The function returns the distance from LED to the ith PD
 
 CallParameters;
-%% Tinh vi tri cua PD thu i
+
+% Position of the ith PD
 
 X_rb=[];
 Y_rb=[];
+
 for i=1:K
     X_rb = [X_rb R*cos(PD_angle(i))];
     Y_rb = [Y_rb R*sin(PD_angle(i))];
 end
+
 X = X_rb;
 Y = Y_rb;
 
-%% Tinh khoang cach tu den LED den PD thu i
+% The distance from LED to the ith PD
 
 D=[];
 for i=1:K
@@ -22,7 +24,7 @@ for i=1:K
 end
 Dd = D;
 
-%% Tinh goc roi den PD thu i
+% The angle from the ith PD
 
 angle=[];
 for i=1:K
